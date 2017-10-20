@@ -1,0 +1,9 @@
+SELECT 
+    IP, COUNT(*) requests
+FROM
+    log_line
+WHERE start_date BETWEEN '2017-01-01 13:00:00' AND '2017-01-01 14:00:00'    
+GROUP BY IP
+HAVING COUNT(*) > 100
+ORDER BY IP
+
